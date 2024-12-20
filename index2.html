@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isla Silvestre - Konzeptvorstellung</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: url('https://cdn.discordapp.com/attachments/1096591038900076647/1319747799088238764/insel.jpeg?ex=6767166b&is=6765c4eb&hm=da89e273eb782cf00741defc9a9f1b786de2c315d41d7b31fe309a35c3b5d643&') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            position: relative;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+        .fog {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+            z-index: -1;
+            overflow: hidden;
+        }
+        .fog-layer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+            animation: moveFog 20s linear infinite;
+        }
+        .fog-layer:nth-child(2) {
+            opacity: 0.5;
+            animation-duration: 25s;
+        }
+        @keyframes moveFog {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            padding: 2em 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid #444;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1, h2 {
+            font-family: 'Mystery Quest', serif;
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            margin: 0;
+        }
+        h1 {
+            font-size: 3.5em;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(50, 50, 50, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            animation: slideIn 1s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .highlight {
+            background-color: rgba(80, 80, 80, 0.9);
+            border-left: 4px solid #76c7c0;
+            color: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            color: #76c7c0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #b0c4de;
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            section {
+                padding: 10px;
+                margin: 10px;
+            }
+            body {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="fog">
+        <div class="fog-layer"></div>
+        <div class="fog-layer"></div>
+    </div>
+    <header>
+        <h1>Isla Silvestre - Konzeptvorstellung</h1>
+    </header>
+
+    <section>
+        <h2>Name des Konzepts:</h2>
+        <p><strong>Isla Silvestre</strong> - Jagd und Schmuggel exotischer Tiere</p>
+
+        <h2>Kurzbeschreibung:</h2>
+        <p>
+            Die Spieler können eine abgelegene, exotische Insel besuchen, die von seltenen und gefährlichen Tieren bevölkert ist.
+            Dort haben sie die Möglichkeit, gegen Bezahlung und mit Erlaubnis des Inselbesitzers bestimmte Tiere zu jagen. Die
+            Beute wie Felle und Fleisch können sie entweder direkt an den Inselbesitzer verkaufen oder illegal in der Stadt
+            veräußern. Das Konzept fördert Rollenspiel-Interaktionen, wirtschaftliche Dynamik und spannende Abenteuer.
+        </p>
+    </section>
+
+    <section>
+        <h2>Die Insel: Setting und Aufbau</h2>
+        <ul>
+            <li><strong>Name der Insel:</strong> Isla Silvestre</li>
+            <li><strong>Geografie:</strong> Dschungelartige Vegetation, Strände, felsige Klippen und versteckte Jagdgebiete.</li>
+            <li><strong>Zugang:</strong> Nur per Boot oder Helikopter erreichbar, mit Kontrollpunkt für Jagdlizenzen.</li>
+        </ul>
+        <p>
+            Isla Silvestre ist eine abgelegene und geheimnisvolle Insel, die sowohl Schönheit als auch Gefahr in sich vereint. 
+            Die dichte Vegetation und das abwechslungsreiche Terrain bieten eine Vielzahl von Verstecken und Jagdgebieten.
+            Spieler müssen sich durch dichte Dschungel kämpfen, gefährliche Klippen erklimmen und versteckte Pfade entdecken,
+            um ihre Beute zu finden.
+        </p>
+    </section>
+
+    <section>
+        <h2>Der Inselbesitzer: Rolle und Funktion</h2>
+        <div class="highlight">
+            <p>Ich bin <strong>"Crow"</strong>, der Einflussreiche Besitzer der Isla Silvestre. Mein Ruf eilt mir voraus: ein
+            ehemaliger Drogen Baron und Schmuggler, der die Insel in eine Goldgrube für seltene Tiere verwandelt hat.</p>
+        </div>
+        <ul>
+            <li><strong>Regeln:</strong> Jagdlizenzen und Ausrüstung sind Pflicht. Spieler können Beute direkt an mich verkaufen.</li>
+            <li><strong>Missionen:</strong> Aufträge wie das Jagen bestimmter Tiere oder das Sammeln seltener Ressourcen.</li>
+        </ul>
+        <p>
+            Crow ist eine charismatische und gefährliche Persönlichkeit, die die Gesetze der Insel gnadenlos durchsetzt. 
+            Er bietet den Spielern lukrative Aufträge und Missionen an, die oft riskant, aber äußerst lohnend sind. 
+            Spieler können ihre Beute direkt an Crow verkaufen oder riskieren, sie in der Stadt illegal zu veräußern.
+        </p>
+    </section>
+
+    <section>
+        <h2>Gameplay-Mechaniken</h2>
+        <ul>
+            <li>Seltene Tiere spawnen zufällig auf der Insel.</li>
+            <li>Spieler benötigen spezielle Waffen oder Fallen.</li>
+            <li>Gefährliche Tiere erhöhen die Spannung und erfordern Teamarbeit.</li>
+        </ul>
+        <p>
+            Die Jagd auf Isla Silvestre ist nicht nur eine Frage des Mutes, sondern auch der Strategie. 
+            Spieler müssen ihre Ausrüstung sorgfältig wählen und ihre Taktiken anpassen, um die gefährlichen Tiere der Insel erfolgreich zu erlegen. 
+            Teamarbeit kann entscheidend sein, um die größten und gefährlichsten Beutetiere zu besiegen.
+        </p>
+    </section>
+
+    <section>
+        <h2>Wirtschaft und Illegalität</h2>
+        <ul>
+            <li>Schmuggel von Beute in die Stadt mit Risiko, erwischt zu werden.</li>
+            <li>Direkter Verkauf an Crow für geringere Preise oder höhere Gewinne auf dem Schwarzmarkt.</li>
+        </ul>
+        <p>
+            Die Wirtschaft auf Isla Silvestre ist ebenso gefährlich wie die Jagd selbst. Spieler können entscheiden, ob sie 
+            ihre Beute legal an Crow verkaufen oder versuchen, sie auf dem Schwarzmarkt zu höheren Preisen zu veräußern. 
+            Der Schmuggel in die Stadt birgt jedoch das Risiko, erwischt und bestraft zu werden.
+        </p>
+    </section>
+
+    <section>
+        <h2>Fazit</h2>
+        <p>
+            Das Konzept der Isla Silvestre bietet eine einzigartige Mischung aus Abenteuer, Wirtschaft und illegalen Aktivitäten,
+            die zahlreiche Möglichkeiten für spannendes Rollenspiel schaffen. Spieler werden in eine Welt voller Gefahren und 
+            Belohnungen eintauchen, in der jede Entscheidung Konsequenzen hat und jedes Abenteuer neue Herausforderungen mit sich bringt.
+        </p>
+    </section>
+
+    <section>
+        <h2>RP-Ziele</h2>
+        <p>Unser Ziel ist es, ein außergewöhnliches Roleplay-Erlebnis zu bieten, das neue Möglichkeiten sowohl für legale als auch für illegale Aktivitäten schafft.</p>
+    </section>
+
+    <section>
+        <h2>Was wird benötigt</h2>
+        <ul>
+            <li>Eine Insel, die als Setting dient</li>
+            <li>Exotische Tiere, die auf der Insel vorkommen</li>
+            <li>Spezialwaffen, die nur auf der Insel verfügbar sind (falls erlaubt)</li>
+        </ul>
+        <p>
+            Um Isla Silvestre erfolgreich umzusetzen, benötigen wir eine detaillierte und atmosphärische Insel, die als Setting dient. 
+            Exotische und gefährliche Tiere sind essenziell, um die Spannung und das Abenteuer der Jagd zu gewährleisten. 
+            Zusätzlich könnten spezielle Waffen und Ausrüstungen, die nur auf der Insel verfügbar sind, das Spielerlebnis weiter vertiefen.
+        </p>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
